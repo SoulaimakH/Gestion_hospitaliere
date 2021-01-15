@@ -1,9 +1,28 @@
 package com.example.demo.models;
 
-public class Chambre {
+import java.io.Serializable;
+import java.util.Set;
 
-int a;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
-int b;
+import lombok.Data;
+@Entity
+@Data
+@Table(name = "chambre")
+public class Chambre implements Serializable {
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+ private int id;
+	private int etage;
+	private int nbrlit;
+	
+	@OneToMany(mappedBy="chambre")
+    private Set<Lit> lits;
+
 
 }
