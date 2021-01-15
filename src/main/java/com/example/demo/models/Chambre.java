@@ -25,7 +25,6 @@ public class Chambre implements Serializable {
 	@OneToMany(mappedBy="cham")
     private Set<Lit> lits;
 	
-	
-	
+
 
 }

@@ -21,9 +21,9 @@ public class Patient {
 	long Id_P;
 	String Nom_P;
 	String Prenom_P;
-	String sexe;
-	int age_P;
-	String adresse_P;
+	String Sexe;
+	int Age_P;
+	String Adresse_P;
 	@OneToOne
 	@JoinColumn( name="id_Lit", nullable=false )
 	private Lit lit;
