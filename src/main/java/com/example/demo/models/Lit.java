@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -27,4 +28,7 @@ public class Lit implements Serializable {
 	@ManyToOne
     @JoinColumn(name="chambre_id", nullable=false)
 	private Chambre chambre;
+	
+	@OneToOne(mappedBy="lit")
+	private Patient patient;
 }
