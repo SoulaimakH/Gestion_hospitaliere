@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.models.Chambre;
 import com.example.demo.models.Lit;
+import com.example.demo.models.Patient;
 import com.example.demo.repository.ChambreRepository;
 import com.example.demo.repository.LitRepository;
+import com.example.demo.repository.PatientRepository;
 
 @Controller
 public class Mycontroller {
@@ -29,5 +31,16 @@ Lit lit = (Lit) m.getAttribute("newLit");
 	daoLit.save(lit);
 	return "redirect Litlist";
 }
+
+@Autowired
+PatientRepository daoPatient;
+@GetMapping("/AjoutPatient")
+public String ajoutP(Model m) {
+Patient patient =new Patient();
+m.addAttribute("newPatient",patient);
+return "ajoutPatient";
 }
+}
+
+
 
