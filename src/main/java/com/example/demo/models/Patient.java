@@ -21,6 +21,7 @@ public class Patient {
 	int Id_P;
 	String Nom_P;
 	String Prenom_P;
+	String sexe;
 	int age_P;
 	String adresse_P;
 	@OneToOne
