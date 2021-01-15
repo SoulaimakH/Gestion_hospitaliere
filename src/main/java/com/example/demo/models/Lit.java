@@ -1,8 +1,12 @@
 package com.example.demo.models;
 
 import java.io.Serializable;
+import java.util.Optional;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -23,12 +27,16 @@ public class Lit implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
  private long id;
 	private float prix;
-	private EtatLit etat;
-	private String Description;
-	@ManyToOne
-    @JoinColumn(name="chambre_id", nullable=false)
-	private Chambre chambre;
 	
-	@OneToOne(mappedBy="lit")
-	private Patient patient;
+	@Enumerated(EnumType.STRING)
+	@Column(length = 20)
+	private EtatLit etat;
+	private long numch;
+	private String description;
+	@ManyToOne
+    @JoinColumn(name="chambre_id", nullable=true)
+	private Chambre cham;
+	
+	/*@OneToOne(mappedBy="lit")
+	private Patient patient;*/
 }

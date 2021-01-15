@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<html>
+
 <head>
 
 <meta charset="ISO-8859-1">
@@ -8,19 +8,37 @@
 </head>
 <body>
  <h1>Ajout d'un lit:</h1>
-<form th:action="@{/sauvgarderlit}"  th:object="${newLit}" method="POST">
+<form th:action="@{/sauvgarderlit}"  th:object="${lit}" method="POST">
 
 
 Etat:
-         <input type="text" th:field="*{Etat}" />    
+
+<select th:field="*{Etat}" >
+  <option th:value="etat_libre" selected>libre</option>
+  <option th:value="etat_occupe" >occupe</option>
+  
+</select>
+
+           
          <br/>
          prix:
          <input type="text" th:field="*{Prix}" />  
-        Dexcription:
-         <input type="text" th:field="*{Prix}" /> 
+        Description:
+         <input type="text" th:field="*{Description}" /> 
             
          <br/>
          <input type="submit" value="Ajoutlit" />
+           chambre:
+
+  <select th:field="*{Numch}"  >
+
+  <option th:each="ch : ${listch}" th:value="${ch.id}" th:text="${ch.id}">
+    </option>
+  
+</select>
       </form>
+    
+
+
 </body>
 </html>

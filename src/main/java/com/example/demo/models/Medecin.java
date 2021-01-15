@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 public class Medecin {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	int code_M;
+	long code_M;
 	String nom_M;
 	String prenom_M;
 	String tel_M;

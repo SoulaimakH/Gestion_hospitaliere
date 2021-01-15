@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.thymeleaf.expression.Lists;
+
 import lombok.Data;
 @Entity
 @Data
@@ -20,9 +22,10 @@ public class Chambre implements Serializable {
  private Long id;
 	private int etage;
 	
-	@OneToMany(mappedBy="chambre")
+	@OneToMany(mappedBy="cham")
     private Set<Lit> lits;
 	
-	private int nbrlit=lits.size();
+	
+	
 
 }
