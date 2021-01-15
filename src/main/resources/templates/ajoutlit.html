@@ -1,10 +1,26 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <html>
 <head>
+
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>AjoutLit</title>
 </head>
 <body>
+ <h1>Ajout d'un lit:</h1>
+<form th:action="@{/sauvgarderlit}"  th:object="${newLit}" method="POST">
 
+
+Etat:
+         <input type="text" th:field="*{Etat}" />    
+         <br/>
+         prix:
+         <input type="text" th:field="*{Prix}" />  
+        Dexcription:
+         <input type="text" th:field="*{Prix}" /> 
+            
+         <br/>
+         <input type="submit" value="Ajoutlit" />
+      </form>
 </body>
 </html>

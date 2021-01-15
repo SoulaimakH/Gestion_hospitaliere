@@ -22,7 +22,7 @@ m.addAttribute("newLit",lit);
 return "ajoutlit";
 }
 
-@PostMapping("savgarderlit")
+@PostMapping("sauvgarderlit")
 public String savech(Model m) {
 	
 Lit lit = (Lit) m.getAttribute("newLit");
