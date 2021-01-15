@@ -20,7 +20,7 @@ public class Lit implements Serializable {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
- private int id;
+ private long id;
 	private float prix;
 	private EtatLit etat;
 	private String Description;

@@ -17,12 +17,12 @@ import lombok.Data;
 public class Chambre implements Serializable {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
- private int id;
+ private Long id;
 	private int etage;
-	private int nbrlit;
 	
 	@OneToMany(mappedBy="chambre")
     private Set<Lit> lits;
-
+	
+	private int nbrlit=lits.size();
 
 }
