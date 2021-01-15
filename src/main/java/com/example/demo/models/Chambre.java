@@ -23,6 +23,6 @@ public class Chambre implements Serializable {
 	@OneToMany(mappedBy="chambre")
     private Set<Lit> lits;
 	
-	private int nbrlit=lits.size();
+//	private int nbrlit=lits.size();
 
 }

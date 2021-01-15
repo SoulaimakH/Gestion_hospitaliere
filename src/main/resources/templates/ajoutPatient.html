@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+
+<meta charset="ISO-8859-1">
+<title>AjoutPatient</title>
+</head>
+<body>
+<form action="">
+
+
+<p> nom Patient: <input type="text" name="nomP" th:field="*{Prenom_P}" ></p>
+<p> Prenom Patient: <input type="text" name="prenP" th:field="*{Nom_P}" ></p>
+<p> sexe: <input type="text" name="sexeP" th:field="*{Sexe}" ></p>
+<p> age: <input type="text" name="ageP" th:field="*{Age_p}" ></p>
+<p> adresse: <input type="text" name="adrP" th:field="*{Adresse_P}" ></p>
+<input type="submit" value="Ajouter Un Patient">
+
+
+
+
+
+</form>
+</body>
+</html>
