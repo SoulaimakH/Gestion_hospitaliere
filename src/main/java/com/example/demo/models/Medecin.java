@@ -15,11 +15,12 @@ import lombok.NoArgsConstructor;
 @Table(name="Medecin")
 public class Medecin {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	long code_M;
-	String nom_M;
-	String prenom_M;
-	String tel_M;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	long codem;
+	String nommed;
+	String prenommedecin;
+	String telmedecin;
+	String specialite;
 	
 	
 	

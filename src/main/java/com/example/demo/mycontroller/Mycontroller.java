@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.models.Chambre;
 import com.example.demo.models.Lit;
+import com.example.demo.models.Medecin;
 import com.example.demo.models.Patient;
 import com.example.demo.repository.ChambreRepository;
 import com.example.demo.repository.LitRepository;
@@ -30,6 +31,7 @@ public class Mycontroller {
 	PatientRepository daoPatient;
 	@Autowired
 	MedecinRepository daomedecin;
+	
 @GetMapping("/Ajoutlit")
 public String ajoutch(Lit lit , Model m) {
 	m.addAttribute("listch",  daoChambre.findAll());
@@ -73,11 +75,26 @@ public String savepatien( @Valid Patient patient, Model model) {
 	
 	 return "redirect:/Ajoutpatien";
 }
-@GetMapping("/Affichenbrelitchambre")
-public String affich() {
+
+
+
+@GetMapping("/AjoutMedecin")
+public String ajoutpatient(Medecin medecin) {
+
 	
 
-	return("/affichlitch");
+return "ajoutMedecin";
 }
+
+@PostMapping("/sauvgarderMedecin")
+public String savepatien( @Valid Medecin medecin) {
+	daomedecin.save(medecin);
+
+	
+
+	 return "redirect:/Ajoutmedecin";
+}
+
+
 }
 
