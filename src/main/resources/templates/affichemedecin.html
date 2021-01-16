@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+
+<table>
+    <thead>
+        <tr>
+            <th> Nom Medecin </th>
+            <th> Prenon Medecin</th>
+            <th> specialite</th>
+            <th> telephone </th>
+            
+            
+        </tr>
+    </thead>
+    <tbody>
+	<tr th:if="${listmedecin.empty}">
+            <td colspan="2"> No Patient Available </td>
+        </tr>
+        <tr th:each="medecin : ${listmedecin}">
+            <td><span th:text="${medecin.nommed}">  </span></td>
+           <td><span th:text="${medecin. prenommedecin}">  </span></td>
+           <td><span th:text="${medecin.specialite}">  </span></td>
+           <td><span th:text="${medecin.telmedecin}">  </span></td>
+           
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+
+</body>
+</html>

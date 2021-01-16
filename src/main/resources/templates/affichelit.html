@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<table>
+    <thead>
+        <tr>
+            <th> num chambre </th>
+            <th> prix</th>
+            <th> Description</th>
+            <th> Etat</th>
+        </tr>
+    </thead>
+    <tbody>
+	<tr th:if="${listlit.empty}">
+            <td colspan="2"> No Books Available </td>
+        </tr>
+        <tr th:each="lit : ${listlit}">
+            <td><span th:text="${lit.numch}">  </span></td>
+           <td><span th:text="${lit. prix}">  </span></td>
+           <td><span th:text="${lit.description}">  </span></td>
+           <td><span th:text="${lit.etat}">  </span></td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+</body>
+</html>

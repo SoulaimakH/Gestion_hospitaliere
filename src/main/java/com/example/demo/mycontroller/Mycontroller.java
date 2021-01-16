@@ -79,7 +79,7 @@ public String savepatien( @Valid Patient patient, Model model) {
 
 
 @GetMapping("/AjoutMedecin")
-public String ajoutpatient(Medecin medecin) {
+public String ajoutmedecin(Medecin medecin) {
 
 	
 
@@ -87,7 +87,7 @@ return "ajoutMedecin";
 }
 
 @PostMapping("/sauvgarderMedecin")
-public String savepatien( @Valid Medecin medecin) {
+public String savemedecin( @Valid Medecin medecin) {
 	daomedecin.save(medecin);
 
 	
@@ -95,6 +95,34 @@ public String savepatien( @Valid Medecin medecin) {
 	 return "redirect:/Ajoutmedecin";
 }
 
+@GetMapping("/Affichelit")
+public String Affichelit(Model m) {
+
+	m.addAttribute("listlit",  daoLit.findAll());
+	m.addAttribute("Lit", new Lit());
+
+return "affichelit";
+}
+
+
+@GetMapping("/AffichePatient")
+public String Affichepatient(Model m) {
+
+	m.addAttribute("listpatient",  daoPatient.findAll());
+	m.addAttribute("patient", new Lit());
+
+return "affichepatient";
+}
+
+
+@GetMapping("/Affichemedecin")
+public String AfficheMedecin(Model m) {
+
+	m.addAttribute("listmedecin",  daomedecin.findAll());
+	m.addAttribute("medecins", new Medecin());
+
+return "affichemedecin";
+} 
 
 }
 

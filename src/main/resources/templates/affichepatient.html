@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<table>
+    <thead>
+        <tr>
+            <th> Nom patient </th>
+            <th> Prenon patient</th>
+            <th> sexe </th>
+            <th> age</th>
+            <th> adresse</th>
+            <th> sejour</th>
+            <th> numerolit</th>
+        </tr>
+    </thead>
+    <tbody>
+	<tr th:if="${listpatient.empty}">
+            <td colspan="2"> No Patient Available </td>
+        </tr>
+        <tr th:each="patient : ${listpatient}">
+            <td><span th:text="${patient.nomp}">  </span></td>
+           <td><span th:text="${patient. prenomp}">  </span></td>
+           <td><span th:text="${patient.sexe}">  </span></td>
+           <td><span th:text="${patient.agep}">  </span></td>
+           <td><span th:text="${patient.adressep}">  </span></td>
+           <td><span th:text="${patient.sejour}">  </span></td>
+           <td  th:if="${patient.sejour > 0}" ><span  th:text="${patient.numlit}">  </span></td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+
+</body>
+</html>
