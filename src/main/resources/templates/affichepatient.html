@@ -30,7 +30,28 @@
            <td><span th:text="${patient.agep}">  </span></td>
            <td><span th:text="${patient.adressep}">  </span></td>
            <td><span th:text="${patient.sejour}">  </span></td>
-           <td  th:if="${patient.sejour > 0}" ><span  th:text="${patient.numlit}">  </span></td>
+           
+           
+           <td  th:if="${patient.sejour > 0}" ><span th:if=" ${patient.numlit > 0} " th:text="${patient.numlit}">  </span>
+           
+            <span th:if=" ${patient.numlit == 0} " >select lit
+            
+            <form th:action="@{/affectlitpatient}"  th:object="${pa}" method="POST">
+            <select th:field="*{Numlit}" >
+            <option th:each="ch : ${listlitNonoccuper}" th:value="${ch.id}" th:text="${ch.id}">
+             </option>
+             </select>  
+            <input type="checkbox" th:field="*{Idp}" th:value="${patient.idp}" checked >
+           <input type="submit" th:value="Affect">
+           </form>
+           </span>
+           
+           </td>
+            
+           <td  th:if="${patient.sejour == 0}" ><span > patient sans sejour </span></td>
+           
+         
+          
         </tr>
     </tbody>
 </table>

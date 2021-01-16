@@ -36,7 +36,8 @@ public class Lit implements Serializable {
 	@ManyToOne
     @JoinColumn(name="chambre_id", nullable=true)
 	private Chambre cham;
-	
-	/*@OneToOne(mappedBy="lit")
-	private Patient patient;*/
+	private Long pid;
+	@OneToOne
+	@JoinColumn( name="id_patient", nullable=true )
+	private Patient patient;
 }

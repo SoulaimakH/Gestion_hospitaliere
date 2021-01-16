@@ -25,10 +25,11 @@ public class Patient {
 	int agep;
 	String adressep;
 	int sejour;
-	int numlit ;
-	@OneToOne
-	@JoinColumn( name="id_Lit", nullable=true )
+	long numlit ;
+	
+	@OneToOne(mappedBy="patient")
 	private Lit lit;
+	
 	
 	
 
