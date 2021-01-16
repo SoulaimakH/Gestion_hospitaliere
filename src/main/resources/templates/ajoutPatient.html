@@ -1,21 +1,43 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<html>
+
 <head>
 
 <meta charset="ISO-8859-1">
 <title>AjoutPatient</title>
 </head>
 <body>
-<form action="">
+<form th:action="@{/sauvgarderPatient}"  th:object="${patient}" method="POST">
 
 
-<p> nom Patient: <input type="text" name="nomP" th:field="*{Prenom_P}" ></p>
-<p> Prenom Patient: <input type="text" name="prenP" th:field="*{Nom_P}" ></p>
-<p> sexe: <input type="text" name="sexeP" th:field="*{Sexe}" ></p>
-<p> age: <input type="text" name="ageP" th:field="*{Age_p}" ></p>
-<p> adresse: <input type="text" name="adrP" th:field="*{Adresse_P}" ></p>
-<input type="submit" value="Ajouter Un Patient">
+<p> nom Patient:
+ <input type="text" name="nomP" th:field="*{Prenomp}" ></p>
+<p> Prenom Patient: 
+<input type="text" name="prenP" th:field="*{Nomp}" ></p>
+<p> sexe: 
+<input type="text" name="sexeP" th:field="*{Sexe}" ></p>
+<p> age: 
+<input type="text" name="ageP" th:field="*{Agep}" ></p>
+<p> adresse: 
+<input type="text" name="adrP" th:field="*{Adressep}" ></p>
+
+<p> Sejour: 
+<input type="text" name="adrP" th:field="*{sejour}" ></p>
+ 
+ 
+ 
+ 
+ 
+ <input type="submit" value="Ajouter Un Patient">
+ 
+ 
+<!--  <p th:if="${sejour > 0}"> Numero du lit: 
+<select th:field="*{numlit}"  >
+
+  <option th:each="lit : ${listlit}" th:value="${lit.id}" th:text="${lit.id}">
+    </option>
+    </select>-->
+
 
 
 

@@ -3,6 +3,7 @@ package com.example.demo.models;
 import java.io.Serializable;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,7 +25,8 @@ public class Chambre implements Serializable {
 	
 	@OneToMany(mappedBy="cham")
     private Set<Lit> lits;
-	
+	/*@Column(nullable=true)
+	private long nbrlit;*/
 
 
 }

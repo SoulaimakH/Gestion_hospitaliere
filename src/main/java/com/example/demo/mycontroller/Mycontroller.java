@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.models.Chambre;
 import com.example.demo.models.Lit;
+import com.example.demo.models.Patient;
 import com.example.demo.repository.ChambreRepository;
 import com.example.demo.repository.LitRepository;
 import com.example.demo.repository.MedecinRepository;
@@ -48,28 +49,35 @@ public String savech( @Valid Lit lit, Model model) {
 	daoLit.save(lit);
 	
 	
+	
 	 return "redirect:/Ajoutlit";
 }
 
 
-/*
-@GetMapping("/Ajoutpatien")
-public String ajoutpatien(Patient patient ) {
 
+@GetMapping("/Ajoutpatient")
+public String ajoutpatient(Patient patient, Model m ) {
 
+	m.addAttribute("listlit",  daoLit.findAll());
+	m.addAttribute("Lit", new Lit());
 
-return "ajoutpatient";
+return "ajoutPatient";
 }
 
-@PostMapping("sauvgarderPatien")
+@PostMapping("/sauvgarderPatient")
 public String savepatien( @Valid Patient patient, Model model) {
-	
+	daoPatient.save(patient);
 
 	
 	
 	
 	 return "redirect:/Ajoutpatien";
-}*/
+}
+@GetMapping("/Affichenbrelitchambre")
+public String affich() {
+	
 
+	return("/affichlitch");
+}
 }
 

@@ -18,14 +18,16 @@ import lombok.NoArgsConstructor;
 public class Patient {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	long Id_P;
-	String Nom_P;
-	String Prenom_P;
-	String Sexe;
-	int Age_P;
-	String Adresse_P;
+	long idp;
+	String nomp;
+	String prenomp;
+	String sexe;
+	int agep;
+	String adressep;
+	int sejour;
+	int numlit ;
 	@OneToOne
-	@JoinColumn( name="id_Lit", nullable=false )
+	@JoinColumn( name="id_Lit", nullable=true )
 	private Lit lit;
 	
 	
